@@ -1,0 +1,337 @@
+Classic Timing Analyzer report for be
+Mon Sep 09 11:49:36 2019
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                 ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------+-------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                               ; To                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------+-------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 0.107 ns                         ; d[0]                               ; pwm:inst|rs:rsc|q ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 10.053 ns                        ; pwm:inst|rs:rsc|q                  ; pwm_out           ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.943 ns                         ; d[5]                               ; pwm:inst|rs:rsc|q ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 419.99 MHz ( period = 2.381 ns ) ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|rs:rsc|q ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                    ;                   ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------+-------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                           ;
++-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                               ; To                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 419.99 MHz ( period = 2.381 ns )               ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 2.167 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[6]          ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 1.504 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[5]          ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 1.465 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[4]          ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 1.354 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 1.889 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 1.858 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 1.769 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 1.220 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|diviseur[7]          ; clk        ; clk      ; None                        ; None                      ; 1.751 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[7]          ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 1.211 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[1]          ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 1.184 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[7] ; clk        ; clk      ; None                        ; None                      ; 1.704 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|diviseur[6]          ; clk        ; clk      ; None                        ; None                      ; 1.680 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[7] ; clk        ; clk      ; None                        ; None                      ; 1.658 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 1.645 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[1]          ; VHDL_BE:inst3|diviseur[7]          ; clk        ; clk      ; None                        ; None                      ; 1.644 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[6] ; clk        ; clk      ; None                        ; None                      ; 1.633 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 1.623 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[2]          ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 1.084 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|diviseur[5]          ; clk        ; clk      ; None                        ; None                      ; 1.609 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[7] ; clk        ; clk      ; None                        ; None                      ; 1.593 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[6] ; clk        ; clk      ; None                        ; None                      ; 1.587 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[1]          ; VHDL_BE:inst3|diviseur[6]          ; clk        ; clk      ; None                        ; None                      ; 1.573 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[7] ; clk        ; clk      ; None                        ; None                      ; 1.564 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|diviseur[4]          ; clk        ; clk      ; None                        ; None                      ; 1.538 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[2]          ; VHDL_BE:inst3|diviseur[7]          ; clk        ; clk      ; None                        ; None                      ; 1.527 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[6] ; clk        ; clk      ; None                        ; None                      ; 1.522 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[1]          ; VHDL_BE:inst3|diviseur[5]          ; clk        ; clk      ; None                        ; None                      ; 1.502 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 1.501 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[7] ; clk        ; clk      ; None                        ; None                      ; 1.494 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[6] ; clk        ; clk      ; None                        ; None                      ; 1.493 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[3]          ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 0.947 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[5] ; clk        ; clk      ; None                        ; None                      ; 1.474 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|diviseur[3]          ; clk        ; clk      ; None                        ; None                      ; 1.467 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 1.457 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[2]          ; VHDL_BE:inst3|diviseur[6]          ; clk        ; clk      ; None                        ; None                      ; 1.456 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[1]          ; VHDL_BE:inst3|diviseur[4]          ; clk        ; clk      ; None                        ; None                      ; 1.431 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[5] ; clk        ; clk      ; None                        ; None                      ; 1.428 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[6] ; clk        ; clk      ; None                        ; None                      ; 1.423 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[3]          ; VHDL_BE:inst3|diviseur[7]          ; clk        ; clk      ; None                        ; None                      ; 1.417 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[4] ; clk        ; clk      ; None                        ; None                      ; 1.403 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|diviseur[2]          ; clk        ; clk      ; None                        ; None                      ; 1.396 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[4]          ; VHDL_BE:inst3|diviseur[7]          ; clk        ; clk      ; None                        ; None                      ; 1.386 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[2]          ; VHDL_BE:inst3|diviseur[5]          ; clk        ; clk      ; None                        ; None                      ; 1.385 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[7] ; clk        ; clk      ; None                        ; None                      ; 1.384 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[6]          ; VHDL_BE:inst3|diviseur[7]          ; clk        ; clk      ; None                        ; None                      ; 1.377 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[5] ; clk        ; clk      ; None                        ; None                      ; 1.363 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[1]          ; VHDL_BE:inst3|diviseur[3]          ; clk        ; clk      ; None                        ; None                      ; 1.360 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[4] ; clk        ; clk      ; None                        ; None                      ; 1.357 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[3]          ; VHDL_BE:inst3|diviseur[6]          ; clk        ; clk      ; None                        ; None                      ; 1.346 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[5] ; clk        ; clk      ; None                        ; None                      ; 1.334 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[3] ; clk        ; clk      ; None                        ; None                      ; 1.332 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[4]          ; VHDL_BE:inst3|diviseur[6]          ; clk        ; clk      ; None                        ; None                      ; 1.315 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[2]          ; VHDL_BE:inst3|diviseur[4]          ; clk        ; clk      ; None                        ; None                      ; 1.314 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[6] ; clk        ; clk      ; None                        ; None                      ; 1.313 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[4] ; clk        ; clk      ; None                        ; None                      ; 1.292 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[1]          ; VHDL_BE:inst3|diviseur[2]          ; clk        ; clk      ; None                        ; None                      ; 1.289 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[3] ; clk        ; clk      ; None                        ; None                      ; 1.286 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[5]          ; VHDL_BE:inst3|diviseur[7]          ; clk        ; clk      ; None                        ; None                      ; 1.276 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[3]          ; VHDL_BE:inst3|diviseur[5]          ; clk        ; clk      ; None                        ; None                      ; 1.275 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[5] ; clk        ; clk      ; None                        ; None                      ; 1.264 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[4] ; clk        ; clk      ; None                        ; None                      ; 1.263 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[2] ; clk        ; clk      ; None                        ; None                      ; 1.261 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[4]          ; VHDL_BE:inst3|diviseur[5]          ; clk        ; clk      ; None                        ; None                      ; 1.244 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[2]          ; VHDL_BE:inst3|diviseur[3]          ; clk        ; clk      ; None                        ; None                      ; 1.243 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[7] ; clk        ; clk      ; None                        ; None                      ; 1.243 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|diviseur[1]          ; clk        ; clk      ; None                        ; None                      ; 1.237 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[3] ; clk        ; clk      ; None                        ; None                      ; 1.221 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[2] ; clk        ; clk      ; None                        ; None                      ; 1.215 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[5]          ; VHDL_BE:inst3|diviseur[6]          ; clk        ; clk      ; None                        ; None                      ; 1.205 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[3]          ; VHDL_BE:inst3|diviseur[4]          ; clk        ; clk      ; None                        ; None                      ; 1.204 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[7]          ; VHDL_BE:inst3|diviseur[7]          ; clk        ; clk      ; None                        ; None                      ; 1.024 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[6]          ; VHDL_BE:inst3|diviseur[6]          ; clk        ; clk      ; None                        ; None                      ; 0.994 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[4] ; clk        ; clk      ; None                        ; None                      ; 0.878 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[3] ; clk        ; clk      ; None                        ; None                      ; 0.877 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[1] ; clk        ; clk      ; None                        ; None                      ; 0.874 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[4]          ; VHDL_BE:inst3|diviseur[4]          ; clk        ; clk      ; None                        ; None                      ; 0.858 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[2]          ; VHDL_BE:inst3|diviseur[2]          ; clk        ; clk      ; None                        ; None                      ; 0.857 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[6] ; clk        ; clk      ; None                        ; None                      ; 0.857 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[0]          ; VHDL_BE:inst3|diviseur[0]          ; clk        ; clk      ; None                        ; None                      ; 0.851 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[2] ; clk        ; clk      ; None                        ; None                      ; 0.838 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[5] ; clk        ; clk      ; None                        ; None                      ; 0.838 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[1] ; clk        ; clk      ; None                        ; None                      ; 0.832 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[5]          ; VHDL_BE:inst3|diviseur[5]          ; clk        ; clk      ; None                        ; None                      ; 0.822 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[3]          ; VHDL_BE:inst3|diviseur[3]          ; clk        ; clk      ; None                        ; None                      ; 0.821 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|diviseur[1]          ; VHDL_BE:inst3|diviseur[1]          ; clk        ; clk      ; None                        ; None                      ; 0.814 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|cnt16:counter|internal[7] ; clk        ; clk      ; None                        ; None                      ; 0.742 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; VHDL_BE:inst3|switch               ; VHDL_BE:inst3|switch               ; clk        ; clk      ; None                        ; None                      ; 0.407 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[0] ; clk        ; clk      ; None                        ; None                      ; 0.407 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; pwm:inst|rs:rsc|q                  ; pwm:inst|rs:rsc|q                  ; clk        ; clk      ; None                        ; None                      ; 0.407 ns                ;
++-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------+
+; tsu                                                                     ;
++-------+--------------+------------+------+-------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                ; To Clock ;
++-------+--------------+------------+------+-------------------+----------+
+; N/A   ; None         ; 0.107 ns   ; d[0] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A   ; None         ; -0.063 ns  ; d[1] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A   ; None         ; -0.109 ns  ; d[7] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A   ; None         ; -0.173 ns  ; d[2] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A   ; None         ; -1.283 ns  ; d[4] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A   ; None         ; -1.396 ns  ; d[3] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A   ; None         ; -1.554 ns  ; d[6] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A   ; None         ; -1.713 ns  ; d[5] ; pwm:inst|rs:rsc|q ; clk      ;
++-------+--------------+------------+------+-------------------+----------+
+
+
++------------------------------------------------------------------------------+
+; tco                                                                          ;
++-------+--------------+------------+-------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From              ; To      ; From Clock ;
++-------+--------------+------------+-------------------+---------+------------+
+; N/A   ; None         ; 10.053 ns  ; pwm:inst|rs:rsc|q ; pwm_out ; clk        ;
++-------+--------------+------------+-------------------+---------+------------+
+
+
++-------------------------------------------------------------------------------+
+; th                                                                            ;
++---------------+-------------+-----------+------+-------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                ; To Clock ;
++---------------+-------------+-----------+------+-------------------+----------+
+; N/A           ; None        ; 1.943 ns  ; d[5] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A           ; None        ; 1.784 ns  ; d[6] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A           ; None        ; 1.626 ns  ; d[3] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A           ; None        ; 1.513 ns  ; d[4] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A           ; None        ; 0.403 ns  ; d[2] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A           ; None        ; 0.339 ns  ; d[7] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A           ; None        ; 0.293 ns  ; d[1] ; pwm:inst|rs:rsc|q ; clk      ;
+; N/A           ; None        ; 0.123 ns  ; d[0] ; pwm:inst|rs:rsc|q ; clk      ;
++---------------+-------------+-----------+------+-------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Sep 09 11:49:36 2019
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off be -c be --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "VHDL_BE:inst3|switch" as buffer
+Info: Clock "clk" has Internal fmax of 419.99 MHz between source register "pwm:inst|cnt16:counter|internal[3]" and destination register "pwm:inst|rs:rsc|q" (period= 2.381 ns)
+    Info: + Longest register to register delay is 2.167 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X33_Y4_N11; Fanout = 4; REG Node = 'pwm:inst|cnt16:counter|internal[3]'
+        Info: 2: + IC(0.360 ns) + CELL(0.438 ns) = 0.798 ns; Loc. = LCCOMB_X33_Y4_N26; Fanout = 1; COMB Node = 'pwm:inst|cmp:cmplimit|Equal0~2'
+        Info: 3: + IC(0.467 ns) + CELL(0.410 ns) = 1.675 ns; Loc. = LCCOMB_X33_Y4_N22; Fanout = 1; COMB Node = 'pwm:inst|cmp:cmplimit|Equal0~4'
+        Info: 4: + IC(0.258 ns) + CELL(0.150 ns) = 2.083 ns; Loc. = LCCOMB_X33_Y4_N24; Fanout = 1; COMB Node = 'pwm:inst|rs:rsc|q~4'
+        Info: 5: + IC(0.000 ns) + CELL(0.084 ns) = 2.167 ns; Loc. = LCFF_X33_Y4_N25; Fanout = 2; REG Node = 'pwm:inst|rs:rsc|q'
+        Info: Total cell delay = 1.082 ns ( 49.93 % )
+        Info: Total interconnect delay = 1.085 ns ( 50.07 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 4.663 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_D13; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.613 ns) + CELL(0.787 ns) = 2.379 ns; Loc. = LCFF_X31_Y35_N1; Fanout = 2; REG Node = 'VHDL_BE:inst3|switch'
+            Info: 3: + IC(0.736 ns) + CELL(0.000 ns) = 3.115 ns; Loc. = CLKCTRL_G10; Fanout = 9; COMB Node = 'VHDL_BE:inst3|switch~clkctrl'
+            Info: 4: + IC(1.011 ns) + CELL(0.537 ns) = 4.663 ns; Loc. = LCFF_X33_Y4_N25; Fanout = 2; REG Node = 'pwm:inst|rs:rsc|q'
+            Info: Total cell delay = 2.303 ns ( 49.39 % )
+            Info: Total interconnect delay = 2.360 ns ( 50.61 % )
+        Info: - Longest clock path from clock "clk" to source register is 4.663 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_D13; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.613 ns) + CELL(0.787 ns) = 2.379 ns; Loc. = LCFF_X31_Y35_N1; Fanout = 2; REG Node = 'VHDL_BE:inst3|switch'
+            Info: 3: + IC(0.736 ns) + CELL(0.000 ns) = 3.115 ns; Loc. = CLKCTRL_G10; Fanout = 9; COMB Node = 'VHDL_BE:inst3|switch~clkctrl'
+            Info: 4: + IC(1.011 ns) + CELL(0.537 ns) = 4.663 ns; Loc. = LCFF_X33_Y4_N11; Fanout = 4; REG Node = 'pwm:inst|cnt16:counter|internal[3]'
+            Info: Total cell delay = 2.303 ns ( 49.39 % )
+            Info: Total interconnect delay = 2.360 ns ( 50.61 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Info: tsu for register "pwm:inst|rs:rsc|q" (data pin = "d[0]", clock pin = "clk") is 0.107 ns
+    Info: + Longest pin to register delay is 4.806 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N25; Fanout = 1; PIN Node = 'd[0]'
+        Info: 2: + IC(2.531 ns) + CELL(0.393 ns) = 3.923 ns; Loc. = LCCOMB_X33_Y4_N0; Fanout = 1; COMB Node = 'pwm:inst|cmp:cmplimit|Equal0~1'
+        Info: 3: + IC(0.241 ns) + CELL(0.150 ns) = 4.314 ns; Loc. = LCCOMB_X33_Y4_N22; Fanout = 1; COMB Node = 'pwm:inst|cmp:cmplimit|Equal0~4'
+        Info: 4: + IC(0.258 ns) + CELL(0.150 ns) = 4.722 ns; Loc. = LCCOMB_X33_Y4_N24; Fanout = 1; COMB Node = 'pwm:inst|rs:rsc|q~4'
+        Info: 5: + IC(0.000 ns) + CELL(0.084 ns) = 4.806 ns; Loc. = LCFF_X33_Y4_N25; Fanout = 2; REG Node = 'pwm:inst|rs:rsc|q'
+        Info: Total cell delay = 1.776 ns ( 36.95 % )
+        Info: Total interconnect delay = 3.030 ns ( 63.05 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 4.663 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_D13; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.613 ns) + CELL(0.787 ns) = 2.379 ns; Loc. = LCFF_X31_Y35_N1; Fanout = 2; REG Node = 'VHDL_BE:inst3|switch'
+        Info: 3: + IC(0.736 ns) + CELL(0.000 ns) = 3.115 ns; Loc. = CLKCTRL_G10; Fanout = 9; COMB Node = 'VHDL_BE:inst3|switch~clkctrl'
+        Info: 4: + IC(1.011 ns) + CELL(0.537 ns) = 4.663 ns; Loc. = LCFF_X33_Y4_N25; Fanout = 2; REG Node = 'pwm:inst|rs:rsc|q'
+        Info: Total cell delay = 2.303 ns ( 49.39 % )
+        Info: Total interconnect delay = 2.360 ns ( 50.61 % )
+Info: tco from clock "clk" to destination pin "pwm_out" through register "pwm:inst|rs:rsc|q" is 10.053 ns
+    Info: + Longest clock path from clock "clk" to source register is 4.663 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_D13; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.613 ns) + CELL(0.787 ns) = 2.379 ns; Loc. = LCFF_X31_Y35_N1; Fanout = 2; REG Node = 'VHDL_BE:inst3|switch'
+        Info: 3: + IC(0.736 ns) + CELL(0.000 ns) = 3.115 ns; Loc. = CLKCTRL_G10; Fanout = 9; COMB Node = 'VHDL_BE:inst3|switch~clkctrl'
+        Info: 4: + IC(1.011 ns) + CELL(0.537 ns) = 4.663 ns; Loc. = LCFF_X33_Y4_N25; Fanout = 2; REG Node = 'pwm:inst|rs:rsc|q'
+        Info: Total cell delay = 2.303 ns ( 49.39 % )
+        Info: Total interconnect delay = 2.360 ns ( 50.61 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 5.140 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X33_Y4_N25; Fanout = 2; REG Node = 'pwm:inst|rs:rsc|q'
+        Info: 2: + IC(2.332 ns) + CELL(2.808 ns) = 5.140 ns; Loc. = PIN_AE22; Fanout = 0; PIN Node = 'pwm_out'
+        Info: Total cell delay = 2.808 ns ( 54.63 % )
+        Info: Total interconnect delay = 2.332 ns ( 45.37 % )
+Info: th for register "pwm:inst|rs:rsc|q" (data pin = "d[5]", clock pin = "clk") is 1.943 ns
+    Info: + Longest clock path from clock "clk" to destination register is 4.663 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_D13; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.613 ns) + CELL(0.787 ns) = 2.379 ns; Loc. = LCFF_X31_Y35_N1; Fanout = 2; REG Node = 'VHDL_BE:inst3|switch'
+        Info: 3: + IC(0.736 ns) + CELL(0.000 ns) = 3.115 ns; Loc. = CLKCTRL_G10; Fanout = 9; COMB Node = 'VHDL_BE:inst3|switch~clkctrl'
+        Info: 4: + IC(1.011 ns) + CELL(0.537 ns) = 4.663 ns; Loc. = LCFF_X33_Y4_N25; Fanout = 2; REG Node = 'pwm:inst|rs:rsc|q'
+        Info: Total cell delay = 2.303 ns ( 49.39 % )
+        Info: Total interconnect delay = 2.360 ns ( 50.61 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 2.986 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_AD13; Fanout = 1; PIN Node = 'd[5]'
+        Info: 2: + IC(0.676 ns) + CELL(0.438 ns) = 2.103 ns; Loc. = LCCOMB_X33_Y4_N0; Fanout = 1; COMB Node = 'pwm:inst|cmp:cmplimit|Equal0~1'
+        Info: 3: + IC(0.241 ns) + CELL(0.150 ns) = 2.494 ns; Loc. = LCCOMB_X33_Y4_N22; Fanout = 1; COMB Node = 'pwm:inst|cmp:cmplimit|Equal0~4'
+        Info: 4: + IC(0.258 ns) + CELL(0.150 ns) = 2.902 ns; Loc. = LCCOMB_X33_Y4_N24; Fanout = 1; COMB Node = 'pwm:inst|rs:rsc|q~4'
+        Info: 5: + IC(0.000 ns) + CELL(0.084 ns) = 2.986 ns; Loc. = LCFF_X33_Y4_N25; Fanout = 2; REG Node = 'pwm:inst|rs:rsc|q'
+        Info: Total cell delay = 1.811 ns ( 60.65 % )
+        Info: Total interconnect delay = 1.175 ns ( 39.35 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 173 megabytes
+    Info: Processing ended: Mon Sep 09 11:49:36 2019
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

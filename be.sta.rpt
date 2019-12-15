@@ -1,0 +1,1125 @@
+TimeQuest Timing Analyzer report for be
+Sat Dec 14 18:41:15 2019
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'VHDL_BE:inst3|switch'
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Hold: 'VHDL_BE:inst3|switch'
+ 15. Slow Model Minimum Pulse Width: 'clk'
+ 16. Slow Model Minimum Pulse Width: 'VHDL_BE:inst3|switch'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'VHDL_BE:inst3|switch'
+ 27. Fast Model Setup: 'clk'
+ 28. Fast Model Hold: 'clk'
+ 29. Fast Model Hold: 'VHDL_BE:inst3|switch'
+ 30. Fast Model Minimum Pulse Width: 'clk'
+ 31. Fast Model Minimum Pulse Width: 'VHDL_BE:inst3|switch'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; be                                                              ;
+; Device Family      ; Cyclone II                                                      ;
+; Device Name        ; EP2C35F672C6                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Combined                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 6      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                     ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; Clock Name           ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                  ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; clk                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                  ;
+; VHDL_BE:inst3|switch ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { VHDL_BE:inst3|switch } ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                             ;
++------------+-----------------+----------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name           ; Note                                                          ;
++------------+-----------------+----------------------+---------------------------------------------------------------+
+; 472.37 MHz ; 472.37 MHz      ; VHDL_BE:inst3|switch ;                                                               ;
+; 508.91 MHz ; 420.17 MHz      ; clk                  ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+----------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------+
+; Slow Model Setup Summary                      ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; VHDL_BE:inst3|switch ; -1.117 ; -5.275        ;
+; clk                  ; -0.965 ; -5.959        ;
++----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Slow Model Hold Summary                       ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clk                  ; -2.515 ; -2.515        ;
+; VHDL_BE:inst3|switch ; 0.391  ; 0.000         ;
++----------------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++-----------------------------------------------+
+; Slow Model Minimum Pulse Width Summary        ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clk                  ; -1.380 ; -10.380       ;
+; VHDL_BE:inst3|switch ; -0.500 ; -9.000        ;
++----------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'VHDL_BE:inst3|switch'                                                                                                                                ;
++--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -1.117 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 2.153      ;
+; -1.003 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 2.039      ;
+; -0.935 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.971      ;
+; -0.915 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.951      ;
+; -0.874 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.910      ;
+; -0.868 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.904      ;
+; -0.846 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.882      ;
+; -0.844 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.880      ;
+; -0.822 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.858      ;
+; -0.807 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.843      ;
+; -0.797 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.833      ;
+; -0.774 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.810      ;
+; -0.751 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.787      ;
+; -0.741 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.777      ;
+; -0.736 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.772      ;
+; -0.726 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.762      ;
+; -0.710 ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.746      ;
+; -0.703 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.739      ;
+; -0.685 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.721      ;
+; -0.638 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.674      ;
+; -0.614 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.650      ;
+; -0.598 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.634      ;
+; -0.592 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.628      ;
+; -0.577 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.613      ;
+; -0.567 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.603      ;
+; -0.544 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.580      ;
+; -0.543 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.579      ;
+; -0.527 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.563      ;
+; -0.506 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.542      ;
+; -0.496 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.532      ;
+; -0.473 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.509      ;
+; -0.472 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.508      ;
+; -0.460 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.496      ;
+; -0.435 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.471      ;
+; -0.425 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.461      ;
+; -0.209 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.245      ;
+; -0.087 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.123      ;
+; -0.085 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[1] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.121      ;
+; -0.074 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.110      ;
+; -0.052 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.088      ;
+; -0.052 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.088      ;
+; -0.042 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[1] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 1.078      ;
+; 0.235  ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.801      ;
+; 0.379  ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[0] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; pwm:inst|rs:rsc|q                  ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.657      ;
++--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                      ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+; -0.965 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 2.001      ;
+; -0.894 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.930      ;
+; -0.858 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.894      ;
+; -0.823 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.859      ;
+; -0.787 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.823      ;
+; -0.752 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.788      ;
+; -0.744 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.780      ;
+; -0.718 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.754      ;
+; -0.716 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.752      ;
+; -0.681 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.717      ;
+; -0.673 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.709      ;
+; -0.668 ; VHDL_BE:inst3|diviseur[7] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.704      ;
+; -0.645 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.681      ;
+; -0.630 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.666      ;
+; -0.610 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.646      ;
+; -0.603 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.639      ;
+; -0.602 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.638      ;
+; -0.574 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.610      ;
+; -0.571 ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.607      ;
+; -0.559 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.595      ;
+; -0.532 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.568      ;
+; -0.531 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.567      ;
+; -0.503 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.539      ;
+; -0.489 ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.525      ;
+; -0.488 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.524      ;
+; -0.461 ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.497      ;
+; -0.461 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.497      ;
+; -0.460 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.496      ;
+; -0.451 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[1] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.487      ;
+; -0.436 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.472      ;
+; -0.429 ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.465      ;
+; -0.418 ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.454      ;
+; -0.417 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.453      ;
+; -0.400 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.436      ;
+; -0.304 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.340      ;
+; -0.163 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.199      ;
+; -0.075 ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.111      ;
+; -0.075 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.111      ;
+; -0.074 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.110      ;
+; -0.065 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[0] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.101      ;
+; -0.035 ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.071      ;
+; -0.034 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.070      ;
+; -0.028 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[1] ; clk                  ; clk         ; 1.000        ; 0.000      ; 1.064      ;
+; 0.248  ; VHDL_BE:inst3|diviseur[7] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.788      ;
+; 2.785  ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch ; clk         ; 0.500        ; 2.656      ; 0.657      ;
+; 3.285  ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch ; clk         ; 1.000        ; 2.656      ; 0.657      ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                       ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+; -2.515 ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch ; clk         ; 0.000        ; 2.656      ; 0.657      ;
+; -2.015 ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch ; clk         ; -0.500       ; 2.656      ; 0.657      ;
+; 0.522  ; VHDL_BE:inst3|diviseur[7] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.788      ;
+; 0.798  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[1] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.064      ;
+; 0.804  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.070      ;
+; 0.805  ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.835  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[0] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.101      ;
+; 0.844  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.110      ;
+; 0.845  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.845  ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.933  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.199      ;
+; 1.074  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.340      ;
+; 1.170  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.436      ;
+; 1.187  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.453      ;
+; 1.188  ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.454      ;
+; 1.199  ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.465      ;
+; 1.206  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.221  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[1] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.487      ;
+; 1.230  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.231  ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.231  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.258  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.524      ;
+; 1.259  ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.525      ;
+; 1.273  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.539      ;
+; 1.301  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.567      ;
+; 1.302  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.568      ;
+; 1.329  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.595      ;
+; 1.341  ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.607      ;
+; 1.344  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.610      ;
+; 1.372  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.638      ;
+; 1.373  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.639      ;
+; 1.380  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.646      ;
+; 1.400  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.666      ;
+; 1.415  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.681      ;
+; 1.438  ; VHDL_BE:inst3|diviseur[7] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.704      ;
+; 1.443  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.709      ;
+; 1.451  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.717      ;
+; 1.486  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.752      ;
+; 1.488  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.754      ;
+; 1.514  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.780      ;
+; 1.522  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.788      ;
+; 1.557  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.823      ;
+; 1.593  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.859      ;
+; 1.628  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.894      ;
+; 1.664  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 1.930      ;
+; 1.735  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 2.001      ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'VHDL_BE:inst3|switch'                                                                                                                                ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.391 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[0] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; pwm:inst|rs:rsc|q                  ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.657      ;
+; 0.535 ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.801      ;
+; 0.812 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[1] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.078      ;
+; 0.822 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.088      ;
+; 0.822 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.088      ;
+; 0.844 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.110      ;
+; 0.855 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[1] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.121      ;
+; 0.857 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.123      ;
+; 0.979 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.245      ;
+; 1.195 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.461      ;
+; 1.205 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.471      ;
+; 1.229 ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.495      ;
+; 1.230 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.496      ;
+; 1.242 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.508      ;
+; 1.243 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.509      ;
+; 1.266 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.532      ;
+; 1.276 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.542      ;
+; 1.297 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.563      ;
+; 1.313 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.579      ;
+; 1.314 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.580      ;
+; 1.337 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.603      ;
+; 1.347 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.613      ;
+; 1.362 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.628      ;
+; 1.363 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.629      ;
+; 1.368 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.634      ;
+; 1.370 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.636      ;
+; 1.384 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.650      ;
+; 1.408 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.674      ;
+; 1.435 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.701      ;
+; 1.455 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.721      ;
+; 1.463 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.729      ;
+; 1.473 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.739      ;
+; 1.506 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.772      ;
+; 1.521 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.787      ;
+; 1.544 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.810      ;
+; 1.565 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.831      ;
+; 1.567 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.833      ;
+; 1.577 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.843      ;
+; 1.592 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.858      ;
+; 1.606 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.872      ;
+; 1.614 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.880      ;
+; 1.638 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.904      ;
+; 1.643 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.909      ;
+; 1.685 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 1.951      ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|switch      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|switch      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[0]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[0]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[1]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[1]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[2]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[2]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[3]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[3]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[4]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[4]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[5]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[5]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[6]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[6]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[7]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[7]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|switch|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|switch|clk          ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'VHDL_BE:inst3|switch'                                                                             ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                ; Clock Edge ; Target                             ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|rs:rsc|q                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|rs:rsc|q                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch|regout                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch|regout                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[4]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[4]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[5]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[5]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[6]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[6]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[7]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[7]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|rsc|q|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|rsc|q|clk                     ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Setup Times                                                                          ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; d[*]      ; VHDL_BE:inst3|switch ; 2.672 ; 2.672 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[0]     ; VHDL_BE:inst3|switch ; 2.064 ; 2.064 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[1]     ; VHDL_BE:inst3|switch ; 2.445 ; 2.445 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[2]     ; VHDL_BE:inst3|switch ; 2.142 ; 2.142 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[3]     ; VHDL_BE:inst3|switch ; 2.028 ; 2.028 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[4]     ; VHDL_BE:inst3|switch ; 1.846 ; 1.846 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[5]     ; VHDL_BE:inst3|switch ; 1.768 ; 1.768 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[6]     ; VHDL_BE:inst3|switch ; 1.915 ; 1.915 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[7]     ; VHDL_BE:inst3|switch ; 2.672 ; 2.672 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; d[*]      ; VHDL_BE:inst3|switch ; -1.538 ; -1.538 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[0]     ; VHDL_BE:inst3|switch ; -1.834 ; -1.834 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[1]     ; VHDL_BE:inst3|switch ; -2.215 ; -2.215 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[2]     ; VHDL_BE:inst3|switch ; -1.912 ; -1.912 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[3]     ; VHDL_BE:inst3|switch ; -1.798 ; -1.798 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[4]     ; VHDL_BE:inst3|switch ; -1.616 ; -1.616 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[5]     ; VHDL_BE:inst3|switch ; -1.538 ; -1.538 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[6]     ; VHDL_BE:inst3|switch ; -1.685 ; -1.685 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[7]     ; VHDL_BE:inst3|switch ; -2.442 ; -2.442 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; pwm_out   ; VHDL_BE:inst3|switch ; 5.920 ; 5.920 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                        ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; pwm_out   ; VHDL_BE:inst3|switch ; 5.920 ; 5.920 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++----------------------------------------------+
+; Fast Model Setup Summary                     ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; VHDL_BE:inst3|switch ; 0.049 ; 0.000         ;
+; clk                  ; 0.099 ; 0.000         ;
++----------------------+-------+---------------+
+
+
++-----------------------------------------------+
+; Fast Model Hold Summary                       ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clk                  ; -1.562 ; -1.562        ;
+; VHDL_BE:inst3|switch ; 0.215  ; 0.000         ;
++----------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++-----------------------------------------------+
+; Fast Model Minimum Pulse Width Summary        ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clk                  ; -1.380 ; -10.380       ;
+; VHDL_BE:inst3|switch ; -0.500 ; -9.000        ;
++----------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'VHDL_BE:inst3|switch'                                                                                                                               ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.049 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.983      ;
+; 0.094 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.938      ;
+; 0.106 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.926      ;
+; 0.122 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.910      ;
+; 0.142 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.890      ;
+; 0.143 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.889      ;
+; 0.157 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.875      ;
+; 0.161 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.871      ;
+; 0.170 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.862      ;
+; 0.175 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.857      ;
+; 0.178 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.854      ;
+; 0.189 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.843      ;
+; 0.192 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.840      ;
+; 0.204 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.828      ;
+; 0.205 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.827      ;
+; 0.210 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.822      ;
+; 0.213 ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.819      ;
+; 0.227 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.805      ;
+; 0.251 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.781      ;
+; 0.272 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.760      ;
+; 0.280 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.752      ;
+; 0.286 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.746      ;
+; 0.299 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.733      ;
+; 0.304 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.728      ;
+; 0.307 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.725      ;
+; 0.315 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.717      ;
+; 0.321 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.711      ;
+; 0.321 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.711      ;
+; 0.334 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.698      ;
+; 0.342 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.690      ;
+; 0.356 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.676      ;
+; 0.356 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.676      ;
+; 0.362 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.670      ;
+; 0.369 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.663      ;
+; 0.377 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.655      ;
+; 0.442 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.590      ;
+; 0.496 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[1] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.536      ;
+; 0.496 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.536      ;
+; 0.502 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.530      ;
+; 0.507 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.525      ;
+; 0.508 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.524      ;
+; 0.512 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[1] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.520      ;
+; 0.632 ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.400      ;
+; 0.665 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[0] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; pwm:inst|rs:rsc|q                  ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 1.000        ; 0.000      ; 0.367      ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                     ;
++-------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+; 0.099 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.933      ;
+; 0.134 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.898      ;
+; 0.154 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.878      ;
+; 0.169 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.863      ;
+; 0.189 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.843      ;
+; 0.204 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.828      ;
+; 0.209 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.823      ;
+; 0.223 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.809      ;
+; 0.224 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.808      ;
+; 0.234 ; VHDL_BE:inst3|diviseur[7] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.798      ;
+; 0.239 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.793      ;
+; 0.258 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.774      ;
+; 0.259 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.773      ;
+; 0.270 ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.762      ;
+; 0.274 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.758      ;
+; 0.275 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.757      ;
+; 0.293 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.739      ;
+; 0.293 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.739      ;
+; 0.294 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.738      ;
+; 0.310 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.722      ;
+; 0.328 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.704      ;
+; 0.328 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.704      ;
+; 0.329 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.703      ;
+; 0.334 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.698      ;
+; 0.345 ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.687      ;
+; 0.345 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.687      ;
+; 0.349 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.683      ;
+; 0.351 ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.681      ;
+; 0.362 ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.670      ;
+; 0.363 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.669      ;
+; 0.363 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.669      ;
+; 0.368 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[1] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.664      ;
+; 0.380 ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.652      ;
+; 0.380 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.652      ;
+; 0.382 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.650      ;
+; 0.463 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.569      ;
+; 0.502 ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.530      ;
+; 0.503 ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.529      ;
+; 0.503 ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.529      ;
+; 0.508 ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[0] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.524      ;
+; 0.518 ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.514      ;
+; 0.518 ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.514      ;
+; 0.522 ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[1] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.510      ;
+; 0.640 ; VHDL_BE:inst3|diviseur[7] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 1.000        ; 0.000      ; 0.392      ;
+; 1.942 ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch ; clk         ; 0.500        ; 1.636      ; 0.367      ;
+; 2.442 ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch ; clk         ; 1.000        ; 1.636      ; 0.367      ;
++-------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                       ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+; -1.562 ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch ; clk         ; 0.000        ; 1.636      ; 0.367      ;
+; -1.062 ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch      ; VHDL_BE:inst3|switch ; clk         ; -0.500       ; 1.636      ; 0.367      ;
+; 0.240  ; VHDL_BE:inst3|diviseur[7] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.358  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[1] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.362  ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.372  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[0] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.377  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378  ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.417  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.569      ;
+; 0.498  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.500  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.500  ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.512  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[1] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.517  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.517  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.518  ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.529  ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.681      ;
+; 0.531  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.535  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.687      ;
+; 0.535  ; VHDL_BE:inst3|diviseur[5] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.687      ;
+; 0.546  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.551  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.552  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.552  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.570  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.586  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.738      ;
+; 0.587  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.605  ; VHDL_BE:inst3|diviseur[3] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.757      ;
+; 0.606  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[2] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.758      ;
+; 0.610  ; VHDL_BE:inst3|diviseur[6] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.762      ;
+; 0.621  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.773      ;
+; 0.622  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.774      ;
+; 0.641  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[3] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.793      ;
+; 0.646  ; VHDL_BE:inst3|diviseur[7] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.798      ;
+; 0.656  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.808      ;
+; 0.657  ; VHDL_BE:inst3|diviseur[2] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.809      ;
+; 0.671  ; VHDL_BE:inst3|diviseur[4] ; VHDL_BE:inst3|switch      ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.823      ;
+; 0.676  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[4] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.828      ;
+; 0.691  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.843      ;
+; 0.711  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[5] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.863      ;
+; 0.726  ; VHDL_BE:inst3|diviseur[1] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.878      ;
+; 0.746  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[6] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.898      ;
+; 0.781  ; VHDL_BE:inst3|diviseur[0] ; VHDL_BE:inst3|diviseur[7] ; clk                  ; clk         ; 0.000        ; 0.000      ; 0.933      ;
++--------+---------------------------+---------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'VHDL_BE:inst3|switch'                                                                                                                                ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.215 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[0] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; pwm:inst|rs:rsc|q                  ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.367      ;
+; 0.248 ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.400      ;
+; 0.368 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[1] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.520      ;
+; 0.372 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.525      ;
+; 0.378 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.530      ;
+; 0.384 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.536      ;
+; 0.384 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[1] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.536      ;
+; 0.438 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.590      ;
+; 0.503 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.655      ;
+; 0.511 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.663      ;
+; 0.518 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.670      ;
+; 0.524 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.676      ;
+; 0.524 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[2] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.676      ;
+; 0.538 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.690      ;
+; 0.546 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.698      ;
+; 0.551 ; pwm:inst|cnt16:counter|internal[7] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.703      ;
+; 0.559 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.711      ;
+; 0.559 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[3] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.711      ;
+; 0.565 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.717      ;
+; 0.573 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.725      ;
+; 0.576 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.728      ;
+; 0.581 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.733      ;
+; 0.594 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[4] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.746      ;
+; 0.600 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.752      ;
+; 0.605 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.757      ;
+; 0.605 ; pwm:inst|cnt16:counter|internal[6] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.757      ;
+; 0.608 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.760      ;
+; 0.629 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[5] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.781      ;
+; 0.638 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.790      ;
+; 0.653 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.805      ;
+; 0.653 ; pwm:inst|cnt16:counter|internal[5] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.805      ;
+; 0.670 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.822      ;
+; 0.675 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.827      ;
+; 0.688 ; pwm:inst|cnt16:counter|internal[3] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.840      ;
+; 0.689 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.841      ;
+; 0.702 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.854      ;
+; 0.705 ; pwm:inst|cnt16:counter|internal[4] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.857      ;
+; 0.710 ; pwm:inst|cnt16:counter|internal[2] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.862      ;
+; 0.721 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.873      ;
+; 0.723 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[6] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.875      ;
+; 0.737 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.889      ;
+; 0.746 ; pwm:inst|cnt16:counter|internal[0] ; pwm:inst|rs:rsc|q                  ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.898      ;
+; 0.758 ; pwm:inst|cnt16:counter|internal[1] ; pwm:inst|cnt16:counter|internal[7] ; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 0.000        ; 0.000      ; 0.910      ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|diviseur[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; VHDL_BE:inst3|switch      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; VHDL_BE:inst3|switch      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[0]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[0]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[1]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[1]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[2]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[2]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[3]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[3]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[4]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[4]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[5]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[5]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[6]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[6]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|diviseur[7]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|diviseur[7]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst3|switch|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst3|switch|clk          ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'VHDL_BE:inst3|switch'                                                                             ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                ; Clock Edge ; Target                             ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|cnt16:counter|internal[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|rs:rsc|q                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; pwm:inst|rs:rsc|q                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch|regout                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch|regout                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst3|switch~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[4]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[4]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[5]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[5]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[6]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[6]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[7]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|counter|internal[7]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; VHDL_BE:inst3|switch ; Rise       ; inst|rsc|q|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; VHDL_BE:inst3|switch ; Rise       ; inst|rsc|q|clk                     ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Setup Times                                                                          ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; d[*]      ; VHDL_BE:inst3|switch ; 1.129 ; 1.129 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[0]     ; VHDL_BE:inst3|switch ; 0.711 ; 0.711 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[1]     ; VHDL_BE:inst3|switch ; 0.906 ; 0.906 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[2]     ; VHDL_BE:inst3|switch ; 0.739 ; 0.739 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[3]     ; VHDL_BE:inst3|switch ; 0.696 ; 0.696 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[4]     ; VHDL_BE:inst3|switch ; 0.613 ; 0.613 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[5]     ; VHDL_BE:inst3|switch ; 0.557 ; 0.557 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[6]     ; VHDL_BE:inst3|switch ; 0.642 ; 0.642 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[7]     ; VHDL_BE:inst3|switch ; 1.129 ; 1.129 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; d[*]      ; VHDL_BE:inst3|switch ; -0.437 ; -0.437 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[0]     ; VHDL_BE:inst3|switch ; -0.591 ; -0.591 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[1]     ; VHDL_BE:inst3|switch ; -0.786 ; -0.786 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[2]     ; VHDL_BE:inst3|switch ; -0.619 ; -0.619 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[3]     ; VHDL_BE:inst3|switch ; -0.576 ; -0.576 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[4]     ; VHDL_BE:inst3|switch ; -0.493 ; -0.493 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[5]     ; VHDL_BE:inst3|switch ; -0.437 ; -0.437 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[6]     ; VHDL_BE:inst3|switch ; -0.522 ; -0.522 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[7]     ; VHDL_BE:inst3|switch ; -1.009 ; -1.009 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; pwm_out   ; VHDL_BE:inst3|switch ; 3.388 ; 3.388 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                        ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; pwm_out   ; VHDL_BE:inst3|switch ; 3.388 ; 3.388 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                 ;
++-----------------------+---------+--------+----------+---------+---------------------+
+; Clock                 ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack      ; -1.117  ; -2.515 ; N/A      ; N/A     ; -1.380              ;
+;  VHDL_BE:inst3|switch ; -1.117  ; 0.215  ; N/A      ; N/A     ; -0.500              ;
+;  clk                  ; -0.965  ; -2.515 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS       ; -11.234 ; -2.515 ; 0.0      ; 0.0     ; -19.38              ;
+;  VHDL_BE:inst3|switch ; -5.275  ; 0.000  ; N/A      ; N/A     ; -9.000              ;
+;  clk                  ; -5.959  ; -2.515 ; N/A      ; N/A     ; -10.380             ;
++-----------------------+---------+--------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Setup Times                                                                          ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; d[*]      ; VHDL_BE:inst3|switch ; 2.672 ; 2.672 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[0]     ; VHDL_BE:inst3|switch ; 2.064 ; 2.064 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[1]     ; VHDL_BE:inst3|switch ; 2.445 ; 2.445 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[2]     ; VHDL_BE:inst3|switch ; 2.142 ; 2.142 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[3]     ; VHDL_BE:inst3|switch ; 2.028 ; 2.028 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[4]     ; VHDL_BE:inst3|switch ; 1.846 ; 1.846 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[5]     ; VHDL_BE:inst3|switch ; 1.768 ; 1.768 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[6]     ; VHDL_BE:inst3|switch ; 1.915 ; 1.915 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[7]     ; VHDL_BE:inst3|switch ; 2.672 ; 2.672 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; d[*]      ; VHDL_BE:inst3|switch ; -0.437 ; -0.437 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[0]     ; VHDL_BE:inst3|switch ; -0.591 ; -0.591 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[1]     ; VHDL_BE:inst3|switch ; -0.786 ; -0.786 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[2]     ; VHDL_BE:inst3|switch ; -0.619 ; -0.619 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[3]     ; VHDL_BE:inst3|switch ; -0.576 ; -0.576 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[4]     ; VHDL_BE:inst3|switch ; -0.493 ; -0.493 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[5]     ; VHDL_BE:inst3|switch ; -0.437 ; -0.437 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[6]     ; VHDL_BE:inst3|switch ; -0.522 ; -0.522 ; Rise       ; VHDL_BE:inst3|switch ;
+;  d[7]     ; VHDL_BE:inst3|switch ; -1.009 ; -1.009 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; pwm_out   ; VHDL_BE:inst3|switch ; 5.920 ; 5.920 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                        ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; pwm_out   ; VHDL_BE:inst3|switch ; 3.388 ; 3.388 ; Rise       ; VHDL_BE:inst3|switch ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Setup Transfers                                                                         ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; clk                  ; clk                  ; 44       ; 0        ; 0        ; 0        ;
+; VHDL_BE:inst3|switch ; clk                  ; 1        ; 1        ; 0        ; 0        ;
+; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 53       ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Hold Transfers                                                                          ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; clk                  ; clk                  ; 44       ; 0        ; 0        ; 0        ;
+; VHDL_BE:inst3|switch ; clk                  ; 1        ; 1        ; 0        ; 0        ;
+; VHDL_BE:inst3|switch ; VHDL_BE:inst3|switch ; 53       ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 26    ; 26   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Dec 14 18:41:11 2019
+Info: Command: quartus_sta be -c be
+Info: qsta_default_script.tcl version: #1
+Warning: Parallel compilation is not licensed and has been disabled
+Info: Low junction temperature is 0 degrees C
+Info: High junction temperature is 85 degrees C
+Critical Warning: Synopsys Design Constraints File file not found: 'be.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name VHDL_BE:inst3|switch VHDL_BE:inst3|switch
+    Info: create_clock -period 1.000 -name clk clk
+Info: Analyzing Slow Model
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -1.117
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.117        -5.275 VHDL_BE:inst3|switch 
+    Info:    -0.965        -5.959 clk 
+Info: Worst-case hold slack is -2.515
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -2.515        -2.515 clk 
+    Info:     0.391         0.000 VHDL_BE:inst3|switch 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is -1.380
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.380       -10.380 clk 
+    Info:    -0.500        -9.000 VHDL_BE:inst3|switch 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info: Started post-fitting delay annotation
+Warning: Found 1 output pins without output pin load capacitance assignment
+    Info: Pin "pwm_out" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+Info: Delay annotation completed successfully
+Info: Worst-case setup slack is 0.049
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.049         0.000 VHDL_BE:inst3|switch 
+    Info:     0.099         0.000 clk 
+Critical Warning: Timing requirements not met
+Info: Worst-case hold slack is -1.562
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.562        -1.562 clk 
+    Info:     0.215         0.000 VHDL_BE:inst3|switch 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is -1.380
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.380       -10.380 clk 
+    Info:    -0.500        -9.000 VHDL_BE:inst3|switch 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 288 megabytes
+    Info: Processing ended: Sat Dec 14 18:41:15 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
